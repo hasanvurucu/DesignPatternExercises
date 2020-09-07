@@ -74,6 +74,10 @@ public class GameManager : MonoBehaviour
     {
         //Sets the velocity of points in the scene
         GameObject []pointPrefabs = GameObject.FindGameObjectsWithTag(Tags.POINT_TAG);
+
+        if (pointPrefabs.Length < 1)
+            return;
+        
         for(int i = 0; i < pointPrefabs.Length; i++)
         {
             Rigidbody2D rbTemp = pointPrefabs[i].GetComponent<Rigidbody2D>();
